@@ -1,0 +1,101 @@
+<div class="slider-area ">
+    <div class="slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap hero-cap2 text-center">
+                        <h2>{{title}} training</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section >
+    <div class="container">
+<div class="row">
+    <div class="col-12">
+        <h2 class="contact-title">Training :</h2>
+    </div>
+    <div class="col-lg-8">
+        <form class="form-contact contact_form"    #addTrainingForm="ngForm" (ngSubmit)="addEditTraining()">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control valid" name="title" id="title" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter training title'" placeholder="Enter training title" [(ngModel)]="training.title"  [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control valid" name="duration" id="duration" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter training duration'" placeholder="duration" [(ngModel)]="training.duration" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <input class="form-control" name="date" id="date" type="date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter date'" placeholder="Enter date" [(ngModel)]="training.date"  [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <input class="form-control" name="price" id="price" type="number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter price'" placeholder="Enter price" [(ngModel)]="training.price" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <input class="form-control" name="description" id="description" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter description'" placeholder="Enter description" [(ngModel)]="training.description" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+               <div class="col-12">
+
+                <div class="single-element-widget mt-30" >
+                    <h3 class="mb-30">select Teacher</h3>
+                    <div class="default-select" id="default-select" >
+                                <select  [(ngModel)]="training.teacher" [ngModelOptions]="{standalone: true}" value="select teacher">
+                                    <option value="{{teacher.firstName}} {{teacher.lastName}} "  *ngFor= ' let teacher of teachers'  class="form-group"  >{{teacher.firstName}} {{teacher.lastName}} ({{teacher.subject}})</option>
+                        <!-- <option value="1">Spanish</option>
+                        <option value="1">Arabic</option>
+                        <option value="1">Portuguise</option>
+                        <option value="1">Bengali</option> -->
+                        </select>
+                    </div>
+                </div>
+               </div>
+
+                        
+
+
+                
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="button button-contactForm boxed-btn"> {{title}} Training</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-3 offset-lg-1">
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+                <h3>Buttonwood, California.</h3>
+                <p>Rosemead, CA 91770</p>
+            </div>
+        </div>
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+                <h3>+1 253 565 2365</h3>
+                <p>Mon to Fri 9am to 6pm</p>
+            </div>
+        </div>
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+                <h3>support@colorlib.com</h3>
+                <p>Send us your query anytime!</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section >
+

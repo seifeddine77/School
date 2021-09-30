@@ -1,0 +1,44 @@
+<table class="table table-dark table-striped">
+
+    <thead>
+      <tr>
+        <th scope="col">#Num</th>
+        <th scope="col">#ID</th>
+        
+        <!-- <th scope="col">image</th> -->
+        <th scope="col"> Name</th>
+        
+        <th scope="col">Email</th>
+        <th scope="col">Message</th>
+        <th scope="col">subject</th>
+       
+
+        <th scope="col">Actions</th>
+
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let contact of contacts;let i=index; " >
+
+        <th scope="row">{{i}}</th>
+        <th scope="row">{{contact.id}}</th>
+        <!-- <td><img src="{{contact.image}}" width="150px" height="150px"></td> -->
+        <td>{{contact.name }}</td>
+        <td>{{contact.email}}</td>
+        
+        <td>{{contact.subject}}</td>
+        <td>{{contact.message}}</td>
+        
+        
+        <td><button type="button" class="genric-btn info" (click)="goToDisplay(contact.id)">display</button>
+          <button type="button" class="genric-btn warning"(click)="goToEdit(contact.id)">edit</button>
+          <button type="button" class="genric-btn danger" (click)='deletecontact(i)'>delete</button></td>
+        
+     
+       
+      </tr>
+     
+    </tbody>
+
+</table>

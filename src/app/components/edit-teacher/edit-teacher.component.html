@@ -1,0 +1,141 @@
+<div class="slider-area ">
+    <div class="slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap hero-cap2 text-center">
+                        <h2>edit Teacher</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container">
+<div class="row" >
+    <div class="col-12">
+        <h2 class="contact-title">teacher :</h2>
+    </div>
+    <div class="col-lg-8">
+        <form class="form-contact contact_form" style="padding-left: 150px;" [formGroup]='editTeacherForm'>
+            <div class="row">
+                <div class="col-12">
+                 
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your  first name'" placeholder="Enter your first name" formControlName="firstName" [(ngModel)]='teacher.firstName'> 
+                    </div>
+                    <div *ngIf="editTeacherForm.controls['firstName'].invalid && (editTeacherForm.controls['firstName'].touched || editTeacherForm.controls['firstName'].dirty)">
+                        <div *ngIf="editTeacherForm.controls['firstName'].errors.required" style="color: red;">
+                           this field is required ! 
+                        </div>
+                        <div *ngIf="editTeacherForm.controls['firstName'].errors.minlength" style="color: red;">
+                            firs Name must have at least 4 caracters !
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your last name'" placeholder="Enter your last name" formControlName="lastName" [(ngModel)]='teacher.lastName'>
+                    </div>
+                    <div *ngIf="editTeacherForm.controls['lastName'].invalid && (editTeacherForm.controls['lastName'].touched || editTeacherForm.controls['lastName'].dirty )">
+                        <div *ngIf="editTeacherForm.controls['lastName'].errors.rquired" style="color: red;">
+                            this Field is required !
+                            
+                        </div>
+                        <div *ngIf="editTeacherForm.controls['lastName'].errors.minlength" style="color: red;">
+                            last Name must have at least 4 caracters !
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Enter email address" formControlName="email" [(ngModel)]='teacher.email'>
+                    </div>
+                    <div *ngIf="editTeacherForm.controls['email'].invalid && (editTeacherForm.controls['email'].touched || editTeacherForm.controls['email'].dirty)">
+                       <div *ngIf="editTeacherForm.controls['email'].errors.required" style="color: red;">
+                           this Field is required !
+                       </div> 
+                       <div *ngIf="editTeacherForm.controls['email'].errors.email" style="color:red;">  
+                           Invalid Email !
+                       </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="name" id="name" type="tel" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your phone number'" placeholder="Enter your phone number" formControlName="phone" [(ngModel)]='teacher.phone'>
+                    </div>
+                    <div *ngIf="editTeacherForm.controls['phone'].invalid && (editTeacherForm.controls['phone'].touched || editTeacherForm.controls['phone'].dirty)">
+                     <div *ngIf="editTeacherForm.controls['phone'].errors.required" style="color: red;">
+                         this Fields is required !
+                         
+                     </div>
+                     <div *ngIf="editTeacherForm.controls['phone'].errors.minlength" style="color: red;">
+                         invalid phone number !
+                         
+                     </div>
+                     <div *ngIf="editTeacherForm.controls['phone'].errors.maxlength" style="color: red;"> 
+                         invalid phone Number !
+                     </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your address'" placeholder="Enter your address" formControlName="address" [(ngModel)]='teacher.address'>
+                    </div>
+                    <div *ngIf="editTeacherForm.controls['address'].invalid && editTeacherForm.controls['address'].touched">
+                        <div *ngIf="editTeacherForm.controls['address'].errors.required" style="color: red;">
+                            this field is required !
+                        </div>
+                    </div>
+                </div>
+             
+                <div class="col-12">
+                    <div class="form-group">
+                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject" formControlName="subject" [(ngModel)]='teacher.subject'>
+                    </div>
+                    <div *ngIf="editTeacherForm.controls['subject'].invalid && editTeacherForm.controls['subject'].touched">
+                        <div *ngIf="editTeacherForm.controls['subject'].errors.required"  style="color: red;"> 
+                            this Field is required !
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="button button-contactForm boxed-btn" (click)="editTeacher()">Edit Teacher</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-3 offset-lg-1">
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+                <h3>Buttonwood, California.</h3>
+                <p>Rosemead, CA 91770</p>
+            </div>
+        </div>
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+                <h3>+1 253 565 2365</h3>
+                <p>Mon to Fri 9am to 6pm</p>
+            </div>
+        </div>
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+                <h3>support@colorlib.com</h3>
+                <p>Send us your query anytime!</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>

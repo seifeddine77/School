@@ -1,0 +1,27 @@
+<div class="single-course mb-40">
+    <div class="course-img">
+        <img src="assets/img/gallery/popular_sub1.png" alt="">
+    </div>
+    <div class="course-caption">
+        <div class="course-cap-top">
+            <h4><a type='submit'  (click)="goToDisplay(coursDetails._id)">{{coursDetails.title}}</a></h4>
+        </div>
+        <div class="course-cap-mid d-flex justify-content-between">
+            <div class="course-ratting">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <ul><li>52 Review</li></ul>
+        </div>
+        <div class="course-cap-bottom d-flex justify-content-between">
+            <ul>
+                <li><i class="ti-user"></i> {{coursDetails.teacher}}</li>
+                <li><i class="ti-heart"></i> 562</li>
+            </ul>
+            <span>Free</span>
+        </div>
+    </div>
+</div>

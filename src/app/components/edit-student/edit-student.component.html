@@ -1,0 +1,132 @@
+<div class="slider-area ">
+    <div class="slider-height2 d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap hero-cap2 text-center">
+                        <h2> edit student </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-12">
+        <h2 class="contact-title">user :</h2>
+    </div>
+    <div class="col-lg-8">
+        <form class="form-contact contact_form" style="padding-left: 150px;" [formGroup]="editForm">
+            <div class="row">
+              
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter student  first name'" placeholder="Enter student first name" formControlName="firstName" [(ngModel)]='student.firstName'>
+                    </div>
+                    <div *ngIf="editForm.controls['firstName'].invalid && (editForm.controls['firstName'].touched || editForm.controls['firstName'].dirty)">
+                        <div *ngIf="editForm.controls['firstName'].errors.required" style="color: red;">
+                           this field is required ! 
+                        </div>
+                        <div *ngIf="editForm.controls['firstName'].errors.minlength" style="color: red;">
+                            firs Name must have at least 4 caracters !
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter student last name'" placeholder="Enter student last name" formControlName="lastName" [(ngModel)]='student.lastName'>
+                    </div>
+                    <div *ngIf="editForm.controls['lastName'].invalid && (editForm.controls['lastName'].touched || editForm.controls['lastName'].dirty )">
+                        <div *ngIf="editForm.controls['lastName'].errors.rquired" style="color: red;">
+                            this Field is required !
+                            
+                        </div>
+                        <div *ngIf="editForm.controls['lastName'].errors.minlength" style="color: red;">
+                            last Name must have at least 4 caracters !
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Enter email address" formControlName="email" [(ngModel)]='student.email'>
+                    </div>
+                    <div *ngIf="editForm.controls['email'].invalid && (editForm.controls['email'].touched || editForm.controls['email'].dirty)">
+                       <div *ngIf="editForm.controls['email'].errors.required" style="color: red;">
+                           this Field is required !
+                       </div> 
+                       <div *ngIf="editForm.controls['email'].errors.email" style="color:red;">  
+                           invalid Email  !
+                       </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+
+            
+        </div>
+         
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="name" id="name" type="tel" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter student phone number'" placeholder="Enter student phone number" formControlName="phone" [(ngModel)]='student.phone'>
+                    </div>
+                    <div *ngIf="editForm.controls['phone'].invalid && (editForm.controls['phone'].touched || editForm.controls['phone'].dirty)">
+                     <div *ngIf="editForm.controls['phone'].errors.required" style="color: red;">
+                         this Fields is required !
+                         
+                     </div>
+                     <div *ngIf="editForm.controls['phone'].errors.minlength" style="color: red;">
+                         invalid phone number !
+                         
+                     </div>
+                     <div *ngIf="editForm.controls['phone'].errors.maxlength" style="color: red;"> 
+                         invalid phone Number !
+                     </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter student address'" placeholder="Enter student address" formControlName="address" [(ngModel)]='student.address'>
+                    </div>
+                    <div *ngIf="editForm.controls['address'].invalid && editForm.controls['address'].touched">
+                        <div *ngIf="editForm.controls['address'].errors.required" style="color: red;">
+                            this field is required !
+                        </div>
+                    </div>
+                </div>
+             
+        
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="button button-contactForm boxed-btn" (click)="editStudent()">Validate </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-3 offset-lg-1">
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+                <h3>Buttonwood, California.</h3>
+                <p>Rosemead, CA 91770</p>
+            </div>
+        </div>
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+                <h3>+1 253 565 2365</h3>
+                <p>Mon to Fri 9am to 6pm</p>
+            </div>
+        </div>
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+                <h3>support@colorlib.com</h3>
+                <p>Send us student query anytime!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

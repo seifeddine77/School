@@ -1,0 +1,49 @@
+<table class="table table-dark table-striped">
+
+    <thead>
+      <tr>
+        <th scope="col">#Num</th>
+        <th scope="col">#ID</th>
+        
+        <!-- <th scope="col">image</th> -->
+        <th scope="col">title</th>
+        <th scope="col">date</th>
+        <th scope="col">duration</th>
+        <th scope="col">price</th>
+        <th scope="col">description</th>
+        <th scope="col">trainer </th>
+        
+       
+
+        <th scope="col">Actions</th>
+
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let training of trainings;let i=index; " >
+
+        <th scope="row">{{i}}</th>
+        <th scope="row">{{training._id}}</th>
+        <!-- <td><img src="{{training.image}}" width="150px" height="150px"></td> -->
+        <td>{{training.title }}</td>
+        <td>{{training.date}}</td>
+        <td>{{training.duration}}</td>
+        <td>{{training.price}}</td>
+        <td>{{training.description}}</td>
+        <td>{{training.teacher}}</td>
+        
+        
+        <td><button type="button" class="genric-btn info" (click)="goToDisplay(training._id)">display</button>
+          <button type="button" class="genric-btn warning"(click)="goToEdit(training._id)">edit</button>
+          <button type="button" class="genric-btn danger" (click)='deletetraining(training._id)'>delete</button></td>
+        
+     
+       
+      </tr>
+     
+    </tbody>
+
+</table>
+
+
